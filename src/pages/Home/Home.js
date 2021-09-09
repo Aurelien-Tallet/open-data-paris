@@ -3,7 +3,7 @@ import { useHistory } from 'react-router'
 import GET_API from '../../services/utils'
 import './Home.scss'
 export const Home = () => {
-    const url = 'https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records/'
+    const url = 'https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?order_by=updated_at%20desc&limit=1&pretty=false&timezone=UTC'
     const [lastEvent, setLastEvent] = useState()
     const history = useHistory()
     const [id, setId] = useState()
