@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { EventCard } from "../../components/EventCard/EventCard";
 import GET_API from "../../services/utils";
 import "./Favories.scss";
 export const Favories = () => {
@@ -8,26 +9,22 @@ export const Favories = () => {
       JSON.parse(localStorage.getItem("favories")).forEach(async (id) => {
         const response = await GET_API(
           "https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records/" +
-            id
+          id
         );
         const event = await response.record.fields;
-        console.log(event)
-        setFavories((oldArray) => [...oldArray, event]);
+        const obj = {...event, id }
+        setFavories((oldArray) => [...oldArray, obj]);
+
       });
     } catch (err) {
       console.log(err);
     }
   }, []);
-  return  <div>
+  return <div>
     {favories &&
       favories.map((events) => (
-        <article
-          className="events"
-          key={events.id}
-          style={{ marginTop: "10px" }}
-        >   
-          {events.title}
-        </article>
+
+        <EventCard eventCard={events} key={events.id} id={events.id} />
       ))}
   </div>
 

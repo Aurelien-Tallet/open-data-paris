@@ -1,0 +1,35 @@
+.article {
+    background: rgb(236, 236, 236);
+    padding: 30px;
+    border-radius: 12px;
+    gap: 15px;
+    border: solid 1px #1a1a1a;
+    &.active {
+        background-color: green;
+    }
+    &__title {
+        font-size: 32px;
+        text-transform: uppercase;
+        padding: 20px 0;
+        color: #1a1a1a;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__content {
+        display: flex;
+        &__texts {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 0 100px;
+            .date {
+                font-size: 20px;
+            }
+        }
+
+        img {
+            max-width: 300px;
+        }
+    }
+}

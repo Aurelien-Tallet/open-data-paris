@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useHistory } from 'react-router'
+import { EventCard } from '../../components/EventCard/EventCard'
 import GET_API from '../../services/utils'
 import './Home.scss'
 export const Home = () => {
     const url = 'https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?order_by=updated_at%20desc&limit=1&pretty=false&timezone=UTC'
     const [lastEvent, setLastEvent] = useState()
-    const history = useHistory()
     const [id, setId] = useState()
     useEffect(() => {
         (async () => {
@@ -16,23 +16,17 @@ export const Home = () => {
                 const id = record.id
                 setLastEvent(fields)
                 setId(id)
-
             } catch (err) {
                 console.log(err)
             }
         })()
     }, [])
-    const handleClick = () => {
-        history.push(`/events/${id}`)
-    }
+
     return (
-        <div onClick={handleClick}>
-            {lastEvent && <article>
-                <h1>{lastEvent.title}</h1>
-                <img src={lastEvent.cover_url}></img>
-                <p>{lastEvent.lead_text}</p>
-                <p>{lastEvent.date_start}</p>
-            </article>}
+        <div className="container" >
+            <h1 className="title">Évenements à Paris : </h1>
+
+            {lastEvent && <EventCard eventCard={lastEvent} id={id}></EventCard>}
         </div>
     )
 }
