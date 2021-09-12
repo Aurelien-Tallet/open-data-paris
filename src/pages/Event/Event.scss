@@ -1,0 +1,109 @@
+.single-event {
+    padding: 50px;
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        padding: 50px 0;
+    }
+    .translate {
+        transform: translateY(-50%);
+    }
+    .single-event__address {
+        max-width: 500px;
+        .label {
+            color: black;
+            font-size: 20px;
+            padding: 20px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .content {
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+    }
+    .single-event__contact {
+        width: 500px;
+        p {
+            font-size: 20px;
+            padding: 20px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .contact {
+            display: flex;
+            gap: 30px;
+            font-size: 16px;
+            a {
+                color: #1a1a1a;
+            }
+        }
+    }
+    &__content {
+        img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border: solid 4px #1a1a1a;
+            box-shadow: 8px 8px 0px 2px rgb(184, 184, 219);
+        }
+        display: flex;
+        gap: 100px;
+        &__texts {
+            .description {
+                margin-bottom: 50px;
+                padding: 50px;
+                border: solid 4px #1a1a1a;
+                box-shadow: 8px 8px 0px 2px rgb(184, 184, 219);
+                .label {
+                    font-size: 24px;
+                    padding-bottom: 25px;
+                    font-weight: bold;
+                }
+                .content {
+                    font-size: 20px;
+                }
+            }
+            .infos {
+                display: flex;
+                color: #1a1a1a;
+                max-height: 200px;
+                .date {
+                    padding: 30px;
+                    width: 50%;
+                    border-left: solid 4px #1a1a1a;
+                    .label {
+                        font-size: 24px;
+                        padding-bottom: 25px;
+                        font-weight: bold;
+                    }
+                    .content {
+                        font-size: 20px;
+                    }
+                }
+                .price {
+                    width: 50%;
+                    padding: 30px;
+                    .label {
+                        font-size: 24px;
+                        padding-bottom: 25px;
+                        font-weight: bold;
+                    }
+                    .content {
+                        font-size: 20px;
+                        .buy {
+                            line-height: 3;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            .contact {
+            }
+        }
+    }
+}

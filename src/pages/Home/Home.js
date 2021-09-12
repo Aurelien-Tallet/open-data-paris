@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { useHistory } from 'react-router'
+import React, { useEffect, useState } from 'react'
 import { EventCard } from '../../components/EventCard/EventCard'
 import GET_API from '../../services/utils'
 import './Home.scss'
@@ -24,9 +23,9 @@ export const Home = () => {
 
     return (
         <div className="container" >
-            <h1 className="title">Évenements à Paris : </h1>
+            <h1 className="title">Dernière actualité à Paris : </h1>
 
-            {lastEvent && <EventCard eventCard={lastEvent} id={id}></EventCard>}
+            {lastEvent && id && <EventCard eventCard={lastEvent} id={id}></EventCard>}
         </div>
     )
 }

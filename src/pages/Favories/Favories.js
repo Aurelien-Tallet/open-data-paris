@@ -9,23 +9,24 @@ export const Favories = () => {
       JSON.parse(localStorage.getItem("favories")).forEach(async (id) => {
         const response = await GET_API(
           "https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records/" +
-          id
+            id
         );
         const event = await response.record.fields;
-        const obj = {...event, id }
+        const obj = { ...event, id };
         setFavories((oldArray) => [...oldArray, obj]);
-
       });
     } catch (err) {
       console.log(err);
     }
   }, []);
-  return <div>
-    {favories &&
-      favories.map((events) => (
-
-        <EventCard eventCard={events} key={events.id} id={events.id} />
-      ))}
-  </div>
-
+  return (
+    <div className="favories">
+      <div className="favories__list">
+        {favories &&
+          favories.map((event) => (
+            <EventCard eventCard={event} key={event.id} id={event.id} />
+          ))}
+      </div>
+    </div>
+  );
 };

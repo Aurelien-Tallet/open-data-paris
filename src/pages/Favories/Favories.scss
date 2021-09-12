@@ -1,0 +1,11 @@
+.favories {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 80%;
+        gap: 70px;
+    }
+}

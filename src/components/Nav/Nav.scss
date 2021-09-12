@@ -1,13 +1,22 @@
 nav {
     width: 100vw;
     background: #1a1a1a;
+    background: rgb(184, 184, 219);
     height: 100px;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    border-bottom: inset 4px #1a1a1a;
+    img {
+        width: 60px;
+        margin:0 50px ;
+
+    }
     ul {
         padding: 50px;
         list-style: none;
-        font-family: Arial, Helvetica, sans-serif;
         display: flex;
         gap: 50px;
         li {
@@ -15,8 +24,13 @@ nav {
             a {
                 text-decoration: none;
                 color: #f1f1f1;
+                color: #1a1a1a;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 14px;
+                letter-spacing: 2px;
                 &.selected {
-                    text-decoration: underline;
+                    border-bottom: 2px dashed #1a1a1a;
                 }
             }
         }
