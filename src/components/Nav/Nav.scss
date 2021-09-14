@@ -1,33 +1,63 @@
 nav {
-    width: 100vw;
-    background: #1a1a1a;
+    max-width: 100vw;
+    width: 100%;
+    display:block;
     background: rgb(184, 184, 219);
-    height: 100px;
+    position: relative;
     display: flex;
+    // position: fixed;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    border-bottom: inset 4px #1a1a1a;
-    img {
+    border-bottom: solid 4px #1a1a1a;
+    min-height: 100px;
+    .logo {
         width: 60px;
-        margin:0 50px ;
-
+        margin: 0 50px;
+  
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+    }
+    .burger {
+        display: none;
+        @media screen and (max-width: 900px) {
+            display: block;
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            max-width: 30px;
+        }
     }
     ul {
         padding: 50px;
         list-style: none;
         display: flex;
         gap: 50px;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            height: 300px;
+            align-items: center;
+            padding: 0;
+            width: 100%;
+        }
         li {
             height: 100%;
+            @media screen and (max-width: 900px) {
+                &:first-child {
+                    margin-top: 50px;
+                }
+                line-height: 14px;
+                text-align: center;
+                font-size: 10px;
+                width: 100%;
+            }
+
             a {
                 text-decoration: none;
                 color: #f1f1f1;
                 color: #1a1a1a;
                 text-transform: uppercase;
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 12px;
                 letter-spacing: 2px;
                 &.selected {
                     border-bottom: 2px dashed #1a1a1a;

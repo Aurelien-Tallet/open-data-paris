@@ -31,7 +31,7 @@ export const Event = () => {
                 <p className="content">{parse(event.description)}</p>
               </div>
               <div className="infos">
-                <div className="price">
+               { event.price_detail && <div className="price">
                   <p className="label">Tarifs :</p>
                   <p className="content">{event.price_detail}</p>
                   <p className="content">
@@ -45,7 +45,7 @@ export const Event = () => {
                       Billeterie
                     </a>{" "}
                   </p>
-                </div>
+                </div>} 
 
                 <div className="date">
                   <p className="label">Date :</p>

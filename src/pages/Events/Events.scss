@@ -6,7 +6,7 @@
     &__form {
         padding-bottom: 50px;
         padding-left: 10%;
-        color:#1a1a1a;
+        color: #1a1a1a;
         display: flex;
         gap: 50px;
         &__input {
@@ -28,8 +28,8 @@
         }
         &__cta {
             text-transform: uppercase;
-            width: 150px;            
-            padding:10px;
+            width: 150px;
+            padding: 10px;
             height: 40px;
             background-image: none;
             background-color: transparent;
@@ -49,7 +49,9 @@
         flex-wrap: wrap;
         max-width: 80%;
         margin: 0 auto;
-        // justify-content: center;
         gap: 50px;
+        
     }
 }
+
+
