@@ -1,31 +1,40 @@
 .single-event {
-    padding: 50px;
+    padding: clamp(22px, 2vw, 50px) clamp(10px, 2vw, 50px);
+    @media screen and (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
     h1 {
         text-align: center;
-        font-size: 30px;
+        font-size: clamp(25px, 1.5vw, 30px);
         padding: 50px 0;
     }
     .translate {
         transform: translateY(-50%);
+        @media screen and (max-width: 900px) {
+            transform: translateY(0);
+         }
     }
     .single-event__address {
         max-width: 500px;
         .label {
             color: black;
-            font-size: 20px;
+            font-size: clamp(12px, 1vw, 20px);
             padding: 20px 0;
             text-transform: uppercase;
             font-weight: bold;
         }
         .content {
-            font-size: 16px;
+            font-size:clamp(12px, 1vw, 16px);
             color: #1a1a1a;
         }
     }
     .single-event__contact {
-        width: 500px;
+        width:clamp(300px, 25vw, 500px);
         p {
-            font-size: 20px;
+            font-size: clamp(16px, 1vw, 25px);
             padding: 20px 0;
             text-transform: uppercase;
             font-weight: bold;
@@ -33,35 +42,42 @@
         .contact {
             display: flex;
             gap: 30px;
-            font-size: 16px;
+            font-size: clamp(12px, 1vw, 16px);
             a {
                 color: #1a1a1a;
             }
         }
     }
     &__content {
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
         img {
-            width: 500px;
-            height: 500px;
+            width:clamp(300px, 25vw, 500px);
+            height: clamp(300px, 25vw, 500px);
             object-fit: cover;
             border: solid 4px #1a1a1a;
             box-shadow: 8px 8px 0px 2px rgb(184, 184, 219);
+       
         }
         display: flex;
         gap: 100px;
         &__texts {
             .description {
                 margin-bottom: 50px;
-                padding: 50px;
+                padding: clamp(22px, 2vw, 50px);
                 border: solid 4px #1a1a1a;
                 box-shadow: 8px 8px 0px 2px rgb(184, 184, 219);
                 .label {
-                    font-size: 24px;
+                    font-size: clamp(16px, 1.25vw, 24px);
                     padding-bottom: 25px;
                     font-weight: bold;
                 }
                 .content {
-                    font-size: 20px;
+                    font-size: clamp(12px, 1vw, 20px);
                 }
             }
             .infos {
@@ -73,30 +89,30 @@
                     width: 50%;
                     border-left: solid 4px #1a1a1a;
                     .label {
-                        font-size: 24px;
+                        font-size: clamp(16px, 1.25vw, 24px);
                         padding-bottom: 25px;
                         font-weight: bold;
                     }
                     .content {
-                        font-size: 20px;
+                        font-size: clamp(12px, 1vw, 20px);
                     }
                 }
                 .price {
                     width: 50%;
                     padding: 30px;
                     .label {
-                        font-size: 24px;
+                        font-size: clamp(16px, 1.25vw, 24px);
                         padding-bottom: 25px;
                         font-weight: bold;
                     }
                     .content {
-                        font-size: 20px;
+                        font-size: clamp(12px, 1vw, 20px);
                         .buy {
                             line-height: 3;
                             color: #1a1a1a;
                             text-transform: uppercase;
                             font-weight: bold;
-                            font-size: 18px;
+                            font-size: clamp(12px, 1vw, 20px);
                         }
                     }
                 }

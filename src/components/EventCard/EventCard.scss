@@ -1,13 +1,13 @@
 .article {
     background: rgb(236, 236, 236);
-    padding: 30px;
+    padding: clamp(20px, 1.5vw, 30px);
     border: solid 4px #1a1a1a;
     box-shadow: 8px 8px 0px 2px rgb(184, 184, 219);
     position: relative;
     max-width: calc((100vw / 4) - 30px);
     flex: 1 auto;
-    min-width: 350px;
-    height: 650px;
+    min-width: clamp(300px, 18.22vw, 350px);
+    max-height: 650px;
     &__price {
         position: absolute;
         top: 0;
@@ -28,12 +28,12 @@
         }
     }
     &__title {
-        font-size: 24px;
+        font-size: clamp(16px, 1.5vw, 24px);
         text-transform: uppercase;
         color: #1a1a1a;
         display: inline-block;
         max-width: 90%;
-        height: 100px;
+        height: clamp(60px, 5.2vw, 100px);
         &:hover {
             text-decoration: underline;
         }
@@ -44,10 +44,13 @@
             flex-direction: column;
             justify-content: space-evenly;
             .date {
-                font-size: 16px;
+                font-size: clamp(12px, 1vw, 16px);
                 padding: 10px 0;
                 font-weight: lighter;
                 color: rgb(90, 89, 89);
+            }
+            .content {
+                font-size: clamp(14px, 0.8vw, 18px);
             }
         }
 
@@ -60,9 +63,9 @@
     }
     &__like {
         position: absolute;
-        right: 50px;
-        top: 50px;
-        width: 35px;
+        right: clamp(25px, 2.6vw, 50px);
+        top: clamp(25px, 2.6vw, 50px);
+        width: clamp(25px, 1.8vw, 35px);
         transform: translate(50%, -50%);
         .color {
             overflow: visible;
